@@ -1,0 +1,22 @@
+{% extends 'chat/base.html' %}
+{% load static %}
+
+{% block content %}
+
+What chat room would you like to enter?<br>
+<div class="row">
+<div class="col-10">
+    <input class="form-control" id="room-name-input" placeholder="Type Room Name Here ..." type="text" size="100">
+</div>
+<div class="col-2">
+    <input class="btn btn-outline-success form-control" id="room-name-submit" type="button" value="Enter">
+</div>
+</div>
+
+{% endblock content %}
+
+{% block scripts %}
+
+<script src="{% static 'chat/rooms.js' %}"></script>
+
+{% endblock scripts %}

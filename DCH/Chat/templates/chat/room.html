@@ -1,0 +1,27 @@
+{% extends 'chat/base.html' %}
+{% load static %}
+
+{% block content %}
+
+Chat Room: {{ room_name }}<br>
+<textarea class="form-control" id="chat-log" cols="100" disabled rows="15"></textarea><br>
+
+<div class="row">
+
+<div class="col-10">
+<input class="form-control" id="chat-message-input" placeholder="Type Message Here ..." type="text" size="100"><br>
+</div>
+<div class="col-2">
+<input class="btn btn-outline-success form-control" id="chat-message-submit" type="button" value="Send">
+</div>
+</div>
+
+{{ room_name|json_script:"room-name" }}
+
+{% endblock content %}
+
+{% block scripts %}
+
+<script src="{% static 'chat/room.js' %}"></script>
+
+{% endblock scripts %}
